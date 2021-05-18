@@ -1,0 +1,150 @@
+1. Display your current shell on terminal using echo command
+
+   name_ra@DESKTOP-Q6G5D6J:~$ echo $SHELL
+   /bin/bash
+
+
+2. Display files and directories in present working directory using echo
+   command.
+   
+   name_ra@DESKTOP-Q6G5D6J:~$ echo $PWD
+   /home/name_ra
+   
+3. Write a shell script to Print prime numbers from 1 to n. Read the value of n
+   from user.   
+   
+	   #! /bin/bash
+	   echo "Enter num :"
+	   read n
+	   i=2
+	   f=0
+
+	   while [ $i -lt $((n/2)) ]
+	   do
+
+		if [ $((n%i)) -eq 0 ]
+		then
+
+		f=1
+		fi
+		((i++))
+		done
+
+		if [ "$f" -eq 1 ]
+		then
+		echo "NOT PRIME"
+		else
+		echo "PRIME"
+		fi
+
+4. Write a script to check given number is even or odd.
+
+		#! /bin/bash
+		echo "Enter a number"
+		read num
+		if [ `expr $num % 2` == 0 ]
+		then
+				echo "$num is Even No"
+		else
+				echo "$num is Odd Number"
+		fi		
+
+
+5. Write a script to swap 2 numbers using intermediate variable.
+
+		#! /bin/bash
+		echo "Enetr 1st number :"
+		read a 
+		echo "Enetr 2nd number :"
+		read b 
+
+		echo "Value of 1st a : $a"
+		echo "Value of 1st b : $b"
+
+		temp=$a
+		a=$b 
+		b=$temp
+
+		echo "Value of 1st a : $a"
+		echo "Value of 1st b : $b"
+
+
+
+6. Write a script to swap 2 numbers without using intermediate variable.
+
+        #! /bin/bash
+		echo "Value of 1st a : $a"
+		echo "Value of 1st b : $b"
+
+
+		echo "Enetr 1st number :"
+		read a 
+		echo "Enetr 2nd number :"
+		read b 
+
+		echo "Value of 1st a : $a"
+		echo "Value of 1st b : $b"
+
+		a=$(( a + b ))
+		b=$(( a - b ))
+		a=$(( a - b ))
+
+		echo "Value of 1st a : $a"
+		echo "Value of 1st b : $b"
+
+
+7. Write a script to reverse a number using while loop.
+
+
+		#! /bin/bash
+		echo "Enter a number :"
+		read num 
+		rev=0
+		while (( num>0 ))
+		do
+			r=$((num%10))
+			rev=$((rev*10+r))
+			num=$((num/10))
+		done
+		echo "reverse number = $rev "
+		
+		
+8. Print the table of number
+
+
+		#! /bin/bash
+
+		echo "Enter a number :"
+		read num
+		#for((i=1;i<=10;i++))
+		i=1
+		while (( i<11 ))
+		do 
+		   echo " $num x $i = $(( num*i )) "
+		   (( i++ ))
+		done   
+
+
+9. Get year as an input from user and find whether year is leap year or not.
+        
+		#! /bin/bash
+		echo "Enter year "
+		read year
+		if  [ $(( year % 4)) -eq 0 ]
+		  then
+				echo "Leap year"
+		 elif [[ $(( year % 400)) -eq 0 ]]
+		  then
+				echo "Leap Year"
+		 elif [[ $(( year % 100)) -eq 0 ]]
+		  then
+		     echo "Not Leap Year"
+		  else
+		     echo "Not leap Year"
+		fi
+
+
+
+		
+
+        
